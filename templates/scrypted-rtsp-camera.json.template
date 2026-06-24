@@ -1,0 +1,10 @@
+{
+  "name": "LatteCam",
+  "plugin": "RTSP Camera",
+  "rtspUrl": "rtsp://127.0.0.1:8554/live/lattecam",
+  "homekit": {
+    "recommendedMode": "bridge",
+    "note": "Create this camera through the Scrypted UI. Do not import or commit Scrypted database files, HomeKit PINs, AccessoryInfo files, or IdentifierCache files."
+  }
+}
+

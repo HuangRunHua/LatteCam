@@ -1,0 +1,71 @@
+# LatteCam
+
+LatteCam turns an old iPhone into a local HomeKit camera by streaming to a Mac running MediaMTX and Scrypted.
+
+This repository is intended to be a secure, reproducible GitHub template. It does not include real certificates, passwords, HomeKit pairing state, Scrypted databases, or machine-specific defaults.
+
+## Architecture
+
+```mermaid
+flowchart LR
+  oldIphone["Old iPhone LatteCam"] -->|"RTMPS 1936, authenticated"| mediaMTX["MediaMTX on Mac"]
+  mediaMTX -->|"RTSP 127.0.0.1 only"| scrypted["Scrypted"]
+  scrypted -->|"HomeKit encrypted stream"| homeApp["Apple Home App"]
+  homeHub["HomePod or Apple TV"] -->|"Remote access via Apple"| homeApp
+```
+
+## Security Defaults
+
+- iPhone publishes over authenticated RTMPS.
+- Publish password is stored in iOS Keychain.
+- MediaMTX RTSP is localhost-only for Scrypted.
+- Unused MediaMTX protocols are disabled in the template.
+- Generated certs and credentials live under `local-generated/`, which is ignored by git.
+- Scrypted database and HomeKit pairing files must never be committed.
+
+Do not forward MediaMTX or Scrypted ports to the internet. For cellular viewing, use Apple HomeKit remote access with a Home Hub.
+
+## Quick Start
+
+Start with `QUICKSTART.md`.
+
+Core commands:
+
+```sh
+scripts/generate-local-ca.sh --host YOUR_MAC_HOST.local --ip YOUR_MAC_IP
+scripts/render-mediamtx-config.sh --ip YOUR_MAC_IP --cert local-generated/certs/mediamtx-rtmps.cert.pem --key local-generated/certs/mediamtx-rtmps.key.pem
+xcodegen generate
+scripts/verify-local-stack.sh YOUR_MAC_IP
+```
+
+## Documentation
+
+- `QUICKSTART.md`: end-to-end setup.
+- `docs/security.md`: security model and hardening rules.
+- `docs/runbook.example.md`: safe local runbook template.
+- `docs/homekit-scrypted.md`: Scrypted and HomeKit setup.
+- `docs/troubleshooting.md`: common failure modes.
+- `docs/release-checklist.md`: pre-release checks.
+- `templates/mediamtx.yml.template`: hardened MediaMTX config template.
+
+## Agent Skills
+
+Project-level Cursor Agent Skills are included under `.cursor/skills/`:
+
+- `lattecam-bootstrap`
+- `lattecam-security-hardening`
+- `lattecam-troubleshooting`
+- `lattecam-release-sanitizer`
+
+They guide agents through secure setup, hardening, troubleshooting, and release checks.
+
+## Publish Safety
+
+Before pushing or publishing:
+
+```sh
+scripts/security-check.sh
+```
+
+If the check fails, remove or template the reported values before publishing.
+

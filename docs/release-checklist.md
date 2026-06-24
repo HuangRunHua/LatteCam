@@ -1,0 +1,27 @@
+# Release Checklist
+
+Run this before publishing LatteCam as a GitHub template repository.
+
+## Required Checks
+
+- `scripts/security-check.sh` passes.
+- `bash -n scripts/*.sh` passes.
+- `xcodegen generate` succeeds.
+- `xcodebuild` succeeds with `CODE_SIGNING_ALLOWED=NO`.
+- `.gitignore` excludes generated certs, local runbooks, Scrypted state, and Xcode user state.
+- `project.yml` has no personal `DEVELOPMENT_TEAM`.
+- iOS defaults use placeholders, not a real Mac hostname or LAN IP.
+- Docs use `YOUR_MAC_IP` and `YOUR_MAC_HOST.local`.
+- `local-generated/` is absent from git.
+- No `.cer`, `.key.pem`, `.csr.pem`, `.cert.pem`, `.srl`, `.log`, `scrypted.db`, `AccessoryInfo.*`, or `IdentifierCache.*` files are tracked.
+- No HomeKit PIN appears in tracked files.
+
+## GitHub Template Settings
+
+After pushing the sanitized repository:
+
+1. Open repository settings.
+2. Enable `Template repository`.
+3. Add topics such as `homekit`, `scrypted`, `mediamtx`, `rtmps`, `swiftui`, and `cursor-skills`.
+4. Keep security advisories enabled.
+

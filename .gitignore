@@ -1,0 +1,40 @@
+# macOS
+.DS_Store
+
+# Xcode generated/user-local state
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+LatteCam.xcodeproj/
+
+# Local runbooks and generated operational state
+runbook.md
+*.log
+*.backup.*
+*.bak
+local-generated/
+dist/
+
+# Certificates and private keys generated for a local installation
+*.key
+*.key.pem
+*.csr
+*.csr.pem
+*.srl
+*.cer
+*.crt
+*.crt.pem
+*.cert.pem
+certs/
+
+# Scrypted local state must never be committed
+.scrypted/
+scrypted.db/
+AccessoryInfo.*
+IdentifierCache.*
+
+# Cursor local plans/canvases are not part of the template
+.cursor/plans/
+.cursor/canvases/
+

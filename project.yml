@@ -1,0 +1,55 @@
+name: LatteCam
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    iOS: "15.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "15.0"
+packages:
+  HaishinKit:
+    url: https://github.com/HaishinKit/HaishinKit.swift
+    from: 2.2.5
+targets:
+  LatteCam:
+    type: application
+    platform: iOS
+    sources:
+      - path: LatteCam
+    info:
+      path: LatteCam/Info.plist
+      properties:
+        NSCameraUsageDescription: LatteCam 需要使用摄像头采集实时画面并推送到你的本地 Mac。
+        NSMicrophoneUsageDescription: LatteCam 需要使用麦克风采集实时声音并随视频一起推流。
+        NSLocalNetworkUsageDescription: LatteCam 需要访问局域网，将实时音视频流推送到你的本地 Mac。
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+        UILaunchScreen: {}
+        UIRequiresFullScreen: true
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+    dependencies:
+      - package: HaishinKit
+        product: HaishinKit
+      - package: HaishinKit
+        product: RTMPHaishinKit
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.LatteCam
+        PRODUCT_NAME: LatteCam
+        GENERATE_INFOPLIST_FILE: "NO"
+schemes:
+  LatteCam:
+    build:
+      targets:
+        LatteCam: all
+    run:
+      config: Debug
+    archive:
+      config: Release

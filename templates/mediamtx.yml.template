@@ -1,0 +1,56 @@
+logLevel: info
+logDestinations: [stdout]
+authMethod: internal
+
+authInternalUsers:
+  - user: __PUBLISH_USER_HASH__
+    pass: __PUBLISH_PASS_HASH__
+    ips: []
+    permissions:
+      - action: publish
+        path: live/lattecam
+
+  - user: any
+    pass:
+    ips: ["127.0.0.1", "::1"]
+    permissions:
+      - action: read
+        path: live/lattecam
+
+  - user: any
+    pass:
+    ips: ["127.0.0.1", "::1"]
+    permissions:
+      - action: api
+      - action: metrics
+      - action: pprof
+
+api: false
+metrics: false
+pprof: false
+playback: false
+
+rtsp: true
+rtspTransports: [tcp]
+rtspEncryption: "no"
+rtspAddress: 127.0.0.1:8554
+
+rtmp: true
+rtmpEncryption: "strict"
+rtmpsAddress: __MAC_IP__:1936
+rtmpServerKey: __RTMPS_KEY_PATH__
+rtmpServerCert: __RTMPS_CERT_PATH__
+
+hls: false
+webrtc: false
+srt: false
+moq: false
+
+pathDefaults:
+  source: publisher
+  overridePublisher: false
+  record: false
+
+paths:
+  all_others:
+
