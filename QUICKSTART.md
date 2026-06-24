@@ -14,6 +14,8 @@ On the Mac:
 brew install mediamtx xcodegen ffmpeg
 ```
 
+Use Xcode 26.5 or newer. LatteCam currently uses HaishinKit 2.2.x, which requires Xcode 26+.
+
 Install Scrypted from the official instructions:
 
 ```text

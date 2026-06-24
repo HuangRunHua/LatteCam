@@ -37,6 +37,12 @@ Do not forward MediaMTX or Scrypted ports to the internet. For cellular viewing,
 
 Start with `QUICKSTART.md`.
 
+Requirements:
+
+- Xcode 26.5 or newer for HaishinKit 2.2.x.
+- iOS 15 or newer on the old iPhone.
+- A trusted home LAN with a Mac running MediaMTX and Scrypted.
+
 Core commands:
 
 ```sh

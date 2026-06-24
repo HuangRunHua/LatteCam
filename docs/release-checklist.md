@@ -7,6 +7,7 @@ Run this before publishing LatteCam as a GitHub template repository.
 - `scripts/security-check.sh` passes.
 - `bash -n scripts/*.sh` passes.
 - `xcodegen generate` succeeds.
+- Xcode 26.5 or newer is selected for HaishinKit 2.2.x.
 - `xcodebuild` succeeds with `CODE_SIGNING_ALLOWED=NO`.
 - `.gitignore` excludes generated certs, local runbooks, Scrypted state, and Xcode user state.
 - `project.yml` has no personal `DEVELOPMENT_TEAM`.
