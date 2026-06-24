@@ -1,8 +1,16 @@
 # LatteCam
 
-LatteCam turns an old iPhone into a local HomeKit camera by streaming to a Mac running MediaMTX and Scrypted.
+LatteCam turns an old iPhone into a secure local HomeKit camera by streaming authenticated RTMPS to a Mac running MediaMTX and Scrypted.
 
 This repository is intended to be a secure, reproducible GitHub template. It does not include real certificates, passwords, HomeKit pairing state, Scrypted databases, or machine-specific defaults.
+
+![iOS 15+](https://img.shields.io/badge/iOS-15%2B-blue)
+![SwiftUI](https://img.shields.io/badge/UI-SwiftUI-blue)
+![MediaMTX](https://img.shields.io/badge/media-MediaMTX-informational)
+![Scrypted](https://img.shields.io/badge/HomeKit-Scrypted-informational)
+![Local First](https://img.shields.io/badge/security-local--first-success)
+
+Suggested GitHub topics: `homekit`, `scrypted`, `mediamtx`, `rtmps`, `swiftui`, `ios`, `iphone-camera`, `homekit-camera`, `local-first`, `security`, `smarthome`, `cursor-skills`.
 
 ## Architecture
 
@@ -42,6 +50,7 @@ scripts/verify-local-stack.sh YOUR_MAC_IP
 
 - `QUICKSTART.md`: end-to-end setup.
 - `docs/security.md`: security model and hardening rules.
+- `docs/repository-metadata.md`: suggested GitHub description, topics, and settings.
 - `docs/runbook.example.md`: safe local runbook template.
 - `docs/homekit-scrypted.md`: Scrypted and HomeKit setup.
 - `docs/troubleshooting.md`: common failure modes.

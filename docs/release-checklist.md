@@ -22,6 +22,21 @@ After pushing the sanitized repository:
 
 1. Open repository settings.
 2. Enable `Template repository`.
-3. Add topics such as `homekit`, `scrypted`, `mediamtx`, `rtmps`, `swiftui`, and `cursor-skills`.
-4. Keep security advisories enabled.
+3. Set the repository description to:
+
+   ```text
+   Turn an old iPhone into a secure local HomeKit camera using SwiftUI, RTMPS, MediaMTX, Scrypted, and HomeKit.
+   ```
+
+4. Add topics:
+
+   ```text
+   homekit, scrypted, mediamtx, rtmps, swiftui, ios, iphone-camera, homekit-camera, local-first, security, smarthome, cursor-skills
+   ```
+
+5. Keep Issues enabled for setup and troubleshooting questions.
+6. Keep Actions enabled so CI validates the template.
+7. Keep private vulnerability reporting and security advisories enabled.
+
+See `docs/repository-metadata.md` for copyable GitHub CLI commands.
 
