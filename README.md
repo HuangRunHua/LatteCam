@@ -84,3 +84,10 @@ scripts/security-check.sh
 
 If the check fails, remove or template the reported values before publishing.
 
+## More
+**Just to clarify: LatteCam is more of a proof-of-concept / hackable template than a “everyone should permanently mount an old iPhone as a camera” product.**
+
+The camera app is only one example. The bigger idea is that old iPhones, iPads, or even other hardware can be repurposed as custom HomeKit accessories if you can build the app/bridge around them. With how good AI-assisted coding is getting, the app side is becoming much less of a blocker, so people can customize this for their own needs.
+
+**Also fair point on batteries: I would not recommend leaving an old phone plugged in at 100% forever.** If using it long term, use good ventilation, inspect the battery, avoid swollen batteries, and ideally control charging with a smart outlet / automation.
+
